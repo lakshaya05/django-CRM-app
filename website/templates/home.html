@@ -3,7 +3,6 @@
 {% block content %}
 
 
-
 {% if user.is_authenticated %}
 
 
@@ -26,7 +25,7 @@
 {% if records %}
 	{% for record in records %}
 		<tr>
-      <td>{{ record.id }}</td>
+      <td><a href="{% url 'record' record.id %}">{{ record.id }}</a></td>
 			<td>{{ record.first_name }} {{ record.last_name }}</td>
 			<td>{{ record.email }}</td>
 			<td>{{ record.phone }}</td>
@@ -46,7 +45,7 @@
 
 {% else %}
 
-
+<div class="col-md-6 offset-md-3">
 <h1> Log In </h1>
 <br/>
 
